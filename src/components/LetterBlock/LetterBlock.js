@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "21px",
     marginRight: "21px",
   },
+  pos: {
+    marginLeft: theme.spacing(0.5),
+  },
 }));
 
 export default function LetterBlock(props) {
@@ -51,7 +54,7 @@ export default function LetterBlock(props) {
     <Box>
       {letter && (
         <Box className={classes.letterBox}>
-          <span>{position ? position : <br />}</span>
+          <span className={classes.pos}>{position ? position : <br />}</span>
           <TextField
             id={id}
             value={guess}

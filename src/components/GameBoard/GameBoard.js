@@ -5,10 +5,12 @@ import tempPuzzle from "../../puzzles/testPuzzle";
 
 export default function GameBoard(props) {
   const [xword, setXword] = useState([]);
+  const { createMode } = props;
+
   return (
     <Box>
-      {tempPuzzle &&
-        tempPuzzle.map((row, iter1) => {
+      {tempPuzzle.board &&
+        tempPuzzle.board.map((row, iter1) => {
           return (
             <Grid container>
               {row.map((block, iter) => {
@@ -20,6 +22,7 @@ export default function GameBoard(props) {
                       position={block.position}
                       iter={iter}
                       iter1={iter1}
+                      create={createMode}
                     />
                   </Grid>
                 );
